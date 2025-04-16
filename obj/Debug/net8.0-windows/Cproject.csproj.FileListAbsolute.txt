@@ -1,0 +1,6 @@
+C:\Users\yaksh\source\repos\sql_practice\obj\Debug\net8.0-windows\Cproject.csproj.AssemblyReference.cache
+C:\Users\yaksh\source\repos\sql_practice\obj\Debug\net8.0-windows\loginPage.g.cs
+C:\Users\yaksh\source\repos\sql_practice\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\yaksh\source\repos\sql_practice\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\yaksh\source\repos\sql_practice\obj\Debug\net8.0-windows\Cproject_MarkupCompile.cache
+C:\Users\yaksh\source\repos\sql_practice\obj\Debug\net8.0-windows\Cproject_MarkupCompile.lref

@@ -1,0 +1,121 @@
+﻿<Page x:Class="sql_practice.friendSearch"
+      Loaded="friendSearch_Loaded"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:sql_practice"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="friendSearch">
+
+    <Grid>
+        <!-- Background -->
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#FF001F3F" Offset="0"/>
+                <GradientStop Color="#FF00CFFF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <!-- Layout Definitions -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <TextBlock Text="🔍 Search for Friends"
+                   FontSize="26"
+                   FontWeight="Bold"
+                   FontFamily="Segoe UI"
+                   Foreground="White"
+                   HorizontalAlignment="Center"
+                   Margin="0,20,0,10"
+                   Grid.Row="0"/>
+
+        <!-- Search Controls -->
+        <Grid Grid.Row="1" Margin="20,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox Name="search_txt"
+                     Grid.Column="0"
+                     Height="34"
+                     FontSize="14"
+                     Padding="8"
+                     Background="#FFF9F9F9"
+                     BorderBrush="#FF00BFFF"
+                     BorderThickness="1"
+                     VerticalAlignment="Center"
+                     Margin="5"/>
+
+            <Button Name="search_btn"
+                    Grid.Column="1"
+                    Content="Search"
+                    Height="34"
+                    Margin="5"
+                    Background="#FF00BFFF"
+                    Foreground="White"
+                    FontWeight="SemiBold"
+                    BorderThickness="0"
+                    Click="Button_Click"/>
+
+            <Button Name="back_btn"
+                    Grid.Column="2"
+                    Content="Back"
+                    Height="34"
+                    Margin="5"
+                    Background="#FF666666"
+                    Foreground="White"
+                    FontWeight="SemiBold"
+                    BorderThickness="0"
+                    Click="back_btn_Click"/>
+
+            <Button Content="Requests"
+                    Name="reqs"
+                    Grid.Column="3"
+                    Height="34"
+                    Margin="5"
+                    Background="DeepSkyBlue"
+                    Foreground="White"
+                    BorderBrush="DeepSkyBlue"
+                    Click="reqs_Click"/>
+        </Grid>
+
+        <!-- List of Users -->
+        <Border Grid.Row="2"
+                Margin="20"
+                CornerRadius="10"
+                Background="#33000000"
+                Padding="10">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <ListBox Name="user_lst"
+                         ItemsSource="{Binding UserList}"
+                         Foreground="White"
+                         Background="Transparent"
+                         BorderThickness="0"
+                         FontSize="16"
+                         SelectionChanged="user_lst_SelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border Background="#3300FFFF"
+                                    CornerRadius="6"
+                                    Padding="8"
+                                    Margin="4">
+                                <TextBlock Text="{Binding}"
+                                           FontWeight="SemiBold"
+                                           FontSize="15"/>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</Page>

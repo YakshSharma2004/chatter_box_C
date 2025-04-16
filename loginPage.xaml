@@ -1,0 +1,87 @@
+﻿<Page x:Name="page" x:Class="sql_practice.loginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:sql_practice"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="600"
+      Title="loginPage">
+
+    <Grid>
+        <!-- Background -->
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF00ACFF"/>
+                <GradientStop Color="White" Offset="1"/>
+                <GradientStop Color="#FFDBDBDB" Offset="0.86"/>
+                <GradientStop Color="#FFDBDBDB" Offset="0.699"/>
+                <GradientStop Color="#FFDBDBDB" Offset="0.86"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <!-- Heading -->
+        <TextBlock Text="Chatter Box"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   Foreground="#FF333333"
+                   HorizontalAlignment="Center"
+                   Margin="0,20,0,0"
+                   FontFamily="Bauhaus 93"/>
+
+        <!-- Login Card -->
+        <Border Width="300"
+                Padding="20"
+                Background="#CCFFFFFF"
+                CornerRadius="10"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+            <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Center" >
+
+                <!-- Username -->
+                <Label Content="User Name"
+                       FontFamily="Bauhaus 93"
+                       Foreground="#444"
+                       Margin="0,5,0,0"/>
+                <TextBox Name="username"
+                         Text=""
+                         TextWrapping="Wrap"
+                         Height="27"
+                         Margin="0,0,0,10"
+                         TextChanged="TextBox_TextChanged"/>
+
+                <!-- Password -->
+                <Label Content="Password"
+                       FontFamily="Bauhaus 93"
+                       Foreground="#444"/>
+                <PasswordBox x:Name="pass"
+                             Height="28"
+                             Margin="0,0,0,10"/>
+
+                <!-- Log In Button -->
+                <Button Name="lognin"
+                        Content="Log In"
+                        Height="30"
+                        Width="100"
+                        HorizontalAlignment="Center"
+                        Background="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}"
+                        BorderBrush="#FFDBDBDB"
+                        FontFamily="Bauhaus 93"
+                        Click="lognin_Click"/>
+
+                <!-- Register Text -->
+                <TextBlock x:Name="register_log"
+                           Margin="0,15,0,0"
+                           TextWrapping="Wrap"
+                           TextAlignment="Center"
+                           MouseLeftButtonDown="register_click_log"
+                           Cursor="Hand">
+                    <Run Text="Not a member" />
+                    <Run Text="?? " />
+                    <Run Text="Click here to join!!" FontWeight="Bold" Foreground="Blue"/>
+                </TextBlock>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>
