@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS chat;
+DROP TABLE IF EXISTS friend;
+DROP TABLE IF EXISTS dis_channel_user;
+DROP TABLE IF EXISTS dis_channel;
+DROP TABLE IF EXISTS dbo.[user];
